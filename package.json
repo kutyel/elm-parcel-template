@@ -6,14 +6,16 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "postinstall": "elm-tooling install",
-    "test": "elm-test"
+    "test": "elm-test",
+    "review": "elm-review --template jfmengels/elm-review-common/example"
   },
   "keywords": [],
   "author": "Flavio Corpa <flaviocorpa@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@parcel/transformer-elm": "^2.0.0",
-    "elm-tooling": "^1.6.0",
-    "parcel": "^2.0.0"
+    "@parcel/transformer-elm": "^2.2.1",
+    "elm-review": "^2.7.0",
+    "elm-tooling": "^1.7.0",
+    "parcel": "^2.2.1"
   }
 }
