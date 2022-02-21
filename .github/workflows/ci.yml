@@ -1,0 +1,61 @@
+name: Elm CI
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read .nvmrc
+        run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NVMRC }}
+          cache: yarn
+
+      # Re-use node_modules between runs until package.json or yarn.lock changes.
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package.json', 'yarn.lock') }}
+
+      # Re-use ~/.elm between runs until elm.json, elm-tooling.json or
+      # review/elm.json changes. The Elm compiler saves downloaded Elm packages
+      # to ~/.elm, and elm-tooling saves downloaded tool executables there.
+      - name: Cache ~/.elm
+        uses: actions/cache@v2
+        with:
+          path: ~/.elm
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+
+      # Install tools from elm-tooling.json, unless we restored them from
+      # cache. yarn.lock and elm-tooling.json can change independently,
+      # so we need to install separately based on what was restored from cache.
+      # This is run even if we restored ~/.elm from cache to be 100% sure
+      # node_modules/.bin/ contains links to all your tools. `elm-tooling
+      # install` runs very fast when there’s nothing new to download so
+      # skipping the step doesn’t save much time.
+      - name: yarn ci install
+        run: yarn install --immutable --immutable-cache --check-cache
+
+      - name: elm make
+        run: npx --no-install elm make src/Main.elm --output=/dev/null
+
+      - name: elm-test
+        run: yarn test
+
+      - name: elm-review
+        run: yarn review
+
+      - name: elm-format
+        run: npx --no-install elm-format --validate src tests
+
+      - name: build
+        run: npm run build

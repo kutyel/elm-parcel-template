@@ -6,7 +6,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "postinstall": "elm-tooling install",
-    "test": "elm-test",
+    "test": "npx elm-test-rs",
     "review": "elm-review --template jfmengels/elm-review-common/example"
   },
   "keywords": [],
