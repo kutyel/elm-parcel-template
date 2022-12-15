@@ -6,8 +6,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "postinstall": "elm-tooling install",
-    "test": "elm-test-rs",
-    "review": "elm-review"
+    "test": "elm-test-rs"
   },
   "keywords": [],
   "author": "Flavio Corpa <flaviocorpa@gmail.com>",
@@ -15,7 +14,6 @@
   "devDependencies": {
     "@parcel/transformer-elm": "^2.8.2",
     "autoprefixer": "^10.4.13",
-    "elm-review": "^2.8.5",
     "elm-tooling": "^1.10.0",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
