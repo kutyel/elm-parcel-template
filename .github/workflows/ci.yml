@@ -51,8 +51,8 @@ jobs:
       - name: elm-test
         run: yarn test
 
-      # - name: elm-review
-      #   run: yarn review
+      - name: elm-review
+        run: yarn review
 
       - name: elm-format
         run: npx --no-install elm-format --validate src tests
