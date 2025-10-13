@@ -7,18 +7,20 @@
     "build": "parcel build index.html",
     "postinstall": "elm-tooling install",
     "test": "elm-test-rs",
-    "review": "elm-review"
+    "review": "elm-review",
+    "format": "elm-format --yes ./src/*.elm"
   },
   "keywords": [],
   "author": "Flavio Corpa <flaviocorpa@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@parcel/transformer-elm": "^2.8.2",
-    "autoprefixer": "^10.4.13",
-    "elm-review": "^2.8.5",
-    "elm-tooling": "^1.10.0",
-    "parcel": "^2.8.2",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "@parcel/transformer-elm": "^2.16.0",
+    "@tailwindcss/postcss": "^4.1.14",
+    "autoprefixer": "^10.4.21",
+    "elm-review": "^2.13.4",
+    "elm-tooling": "^1.16.0",
+    "parcel": "^2.16.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
   }
 }

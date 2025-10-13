@@ -37,7 +37,8 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    Html.div [ Attrs.class "h-full grid place-items-center" ]
+    Html.div
+        [ Attrs.class "h-full grid place-items-center" ]
         [ Html.div [ Attrs.class "flex flex-row gap-2" ]
             [ Html.button [ onClick Decrement ] [ Html.text "-" ]
             , Html.div [] [ Html.text <| String.fromInt model ]

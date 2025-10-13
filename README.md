@@ -1,8 +1,9 @@
 # elm-parcel-template
 
-[![Elm CI](https://github.com/kutyel/elm-parcel-template/workflows/Elm%20CI/badge.svg)](https://github.com/kutyel/elm-parcel-template/actions)
+[![NixCI Badge](https://nix-ci.com/badge/gh:kutyel:elm-countries-quiz)](https://nix-ci.com/account/repo/gh:kutyel:elm-countries-quiz/suite/main)
 
 - [x] Add `elm-test-rs`
 - [x] Add `elm-review`
 - [x] Add `tailwindcss`
-- [x] Add Github Actions
+- [x] Add Nix ❄️
+- [x] Add NixCI ✅
