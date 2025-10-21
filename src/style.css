@@ -1,5 +1,2 @@
 @import "tailwindcss";
-
-body {
-  height: 100vh;
-}
+@plugin "daisyui";
