@@ -1,5 +1,65 @@
 {
   "nodes": {
+    "elm-review-tool-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756066304,
+        "narHash": "sha256-kar5wumf2ZajmgUk86hNuJegOTlvVTTrpTgg/3XRd1M=",
+        "owner": "jfmengels",
+        "repo": "node-elm-review",
+        "rev": "e348515539518630122be6924c7cae94ffb24418",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jfmengels",
+        "repo": "node-elm-review",
+        "type": "github"
+      }
+    },
+    "elm-spa": {
+      "inputs": {
+        "nixpkgs": [
+          "mkElmDerivation",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706301604,
+        "narHash": "sha256-n6LDjnPCTLbKTrRgeZhlLTfY6V45xNYcb4NYEMuO4jg=",
+        "owner": "jeslie0",
+        "repo": "elm-spa",
+        "rev": "4c82e18d5fcf9d4c027f0ef0e89204dd87584f7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jeslie0",
+        "repo": "elm-spa",
+        "type": "github"
+      }
+    },
+    "elm-watch": {
+      "inputs": {
+        "nixpkgs": [
+          "mkElmDerivation",
+          "nixpkgs"
+        ],
+        "npm-fix": "npm-fix",
+        "npmlock2nix": "npmlock2nix"
+      },
+      "locked": {
+        "lastModified": 1706304401,
+        "narHash": "sha256-992cypnhoRbsGkDc5/X241rafBML4EP0EuT6cBcaY/8=",
+        "owner": "jeslie0",
+        "repo": "elm-watch",
+        "rev": "2f1c6c0e69b163c15e2ce66f543c38021b2a0ea3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jeslie0",
+        "repo": "elm-watch",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -15,6 +75,29 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "mkElmDerivation": {
+      "inputs": {
+        "elm-spa": "elm-spa",
+        "elm-watch": "elm-watch",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760833484,
+        "narHash": "sha256-VugMk/myhGQE71hrCugupr+FIuIL6NCdJeken9mzGoQ=",
+        "owner": "r-k-b",
+        "repo": "mkElmDerivation",
+        "rev": "179335e229c00860eeb8f424ba5b017d62adcdf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "r-k-b",
+        "ref": "support-elm-review",
+        "repo": "mkElmDerivation",
         "type": "github"
       }
     },
@@ -34,9 +117,49 @@
         "type": "github"
       }
     },
+    "npm-fix": {
+      "inputs": {
+        "nixpkgs": [
+          "mkElmDerivation",
+          "elm-watch",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706304213,
+        "narHash": "sha256-XN9ESRSOANR0iFbEMMY1C1jvgZlYJsXQYVAHxxRmn+c=",
+        "owner": "jeslie0",
+        "repo": "npm-lockfile-fix",
+        "rev": "e9851274afa12b04d98e694ed089aa9cde8d7349",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jeslie0",
+        "repo": "npm-lockfile-fix",
+        "type": "github"
+      }
+    },
+    "npmlock2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673447413,
+        "narHash": "sha256-sJM82Sj8yfQYs9axEmGZ9Evzdv/kDcI9sddqJ45frrU=",
+        "owner": "nix-community",
+        "repo": "npmlock2nix",
+        "rev": "9197bbf397d76059a76310523d45df10d2e4ca81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "npmlock2nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "elm-review-tool-src": "elm-review-tool-src",
         "flake-utils": "flake-utils",
+        "mkElmDerivation": "mkElmDerivation",
         "nixpkgs": "nixpkgs"
       }
     },
