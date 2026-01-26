@@ -5,7 +5,6 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "postinstall": "elm-tooling install",
     "test": "elm-test-rs",
     "review": "elm-review",
     "format": "elm-format --yes ./src/*.elm"
@@ -18,8 +17,6 @@
     "@tailwindcss/postcss": "^4.1.14",
     "autoprefixer": "^10.4.21",
     "daisyui": "^5.3.7",
-    "elm-review": "^2.13.4",
-    "elm-tooling": "^1.16.0",
     "parcel": "^2.16.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.14"

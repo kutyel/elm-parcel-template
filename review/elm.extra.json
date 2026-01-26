@@ -1,0 +1,8 @@
+{
+    "type": "application",
+    "dependencies": {
+        "indirect": {
+            "elm/json": "1.1.3"
+        }
+    }
+}

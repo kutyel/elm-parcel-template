@@ -7,3 +7,10 @@
 - [x] Add `tailwindcss`
 - [x] Add Nix ❄️
 - [x] Add NixCI ✅
+
+Commands to generate `elm.lock` file:
+
+```sh
+nix develop
+elm2nix lock elm.json review/elm.json review/elm.extra.json
+```
