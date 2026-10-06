@@ -27,7 +27,7 @@ stdenv.mkDerivation (finalAttrs: {
       ../index.html
       ../package.json
       ../pnpm-lock.yaml
-      ../tailwind.config.js
+      ../tailwind.config.ts
     ];
   };
 
